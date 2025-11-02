@@ -1,22 +1,22 @@
 import pymysql
 from dotenv import load_dotenv
 import os
-global conn
+
 load_dotenv()
+global conn
 
-# Read database credentials from .env file
-DB_USER = os.getenv("DB_USER")
-DB_PASS = os.getenv("DB_PASS")
-
+# Read credentials from .env
 DB_CONFIG = {
-    "host": "localhost",
-    "user": DB_USER,
-    "password": DB_PASS,  # MySQL password
-    "database": "pandeyji_eatery",
+    "host": os.getenv("DB_HOST"),
+    "port": int(os.getenv("DB_PORT", 3306)),
+    "user": os.getenv("DB_USER"),
+    "password": os.getenv("DB_PASS"),
+    "database": os.getenv("DB_NAME"),
     "cursorclass": pymysql.cursors.DictCursor,
-    "autocommit": True,       # ✅ ensures commits automatically
-    "connect_timeout": 10     # ✅ prevents hanging connections
+    "autocommit": True,
+    "connect_timeout": 10
 }
+
 
 def get_connection():
     """Create and return a fresh MySQL connection, reconnecting if needed."""
