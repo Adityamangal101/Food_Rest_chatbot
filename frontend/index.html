@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pandeyji Eatery | Serving Tradition on Every Plate 🍛</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #fffaf3;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* HERO SECTION */
+    header {
+      height: 90vh;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url('https://images.unsplash.com/photo-1601050690597-3e9f05c7f951?auto=format&fit=crop&w=1350&q=80') center/cover;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 1rem;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+
+    header button {
+      background: #ff9800;
+      color: white;
+      border: none;
+      padding: 0.8rem 2rem;
+      font-size: 1.1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    header button:hover {
+      background: #e68900;
+    }
+
+    /* ABOUT SECTION */
+    .about {
+      padding: 4rem 10%;
+      text-align: center;
+    }
+
+    .about h2 {
+      color: #ff9800;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .about p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    /* MENU SECTION */
+    .menu {
+      background: #fff3e0;
+      padding: 4rem 10%;
+    }
+
+    .menu h2 {
+      text-align: center;
+      color: #ff9800;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .menu-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+
+    .item {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .item:hover {
+      transform: scale(1.05);
+    }
+
+    .item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .item h3 {
+      color: #333;
+      margin: 1rem 0 0.5rem;
+      text-align: center;
+    }
+
+    .item p {
+      color: #777;
+      text-align: center;
+      padding: 0 1rem 1.2rem;
+      font-size: 0.95rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #ff9800;
+      color: white;
+      text-align: center;
+      padding: 1.2rem;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header>
+    <h1>🍴 Pandeyji Eatery</h1>
+    <p>Serving Tradition on Every Plate 🍛</p>
+    <button onclick="openChat()">Chat With Us</button>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <h2>About Us</h2>
+    <p>
+      Welcome to <strong>Pandeyji Eatery</strong>, where the flavors of India come alive!  
+      From the sizzling Pav Bhaji of Mumbai to the spicy Chole Bhature of Delhi,  
+      we serve authentic, heartwarming dishes that remind you of home.
+    </p>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu">
+    <h2>Our Specialties</h2>
+    <div class="menu-items">
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1631515243349-68ac095c6c4b?auto=format&fit=crop&w=800&q=80" alt="Pav Bhaji">
+        <h3>Pav Bhaji</h3>
+        <p>Spicy mashed veggies served with buttery buns.</p>
+      </div>
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1626082927387-abe3e6b4a7e5?auto=format&fit=crop&w=800&q=80" alt="Chole Bhature">
+        <h3>Chole Bhature</h3>
+        <p>Delhi’s iconic dish — fluffy bhature with spicy chickpeas.</p>
+      </div>
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1625397602235-76c9a1fcb4e9?auto=format&fit=crop&w=800&q=80" alt="Masala Dosa">
+        <h3>Masala Dosa</h3>
+        <p>South Indian crepe filled with spiced potatoes.</p>
+      </div>
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1606491956689-2b88f7e7c8a3?auto=format&fit=crop&w=800&q=80" alt="Biryani">
+        <h3>Biryani</h3>
+        <p>Fragrant basmati rice cooked with flavorful Indian spices.</p>
+      </div>
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1617196034796-73f39f3c8c57?auto=format&fit=crop&w=800&q=80" alt="Vada Pav">
+        <h3>Vada Pav</h3>
+        <p>Mumbai’s street-style spicy potato slider.</p>
+      </div>
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80" alt="Samosa">
+        <h3>Samosa</h3>
+        <p>Crispy golden triangles filled with spicy potato goodness.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Pandeyji Eatery | Crafted with ❤️ in India
+  </footer>
+
+  <!-- Dialogflow Chatbot Embed -->
+  <script>
+    function openChat() {
+      window.dfMessenger.renderCustomText('👋 Namaste! How can I help you today?');
+      document.querySelector('df-messenger').setAttribute('open', '');
+    }
+  </script>
+
+  <!-- Replace this Dialogflow agent with yours -->
+  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  chat-icon="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Adityamangal101&#x2F;My-assets&#x2F;main&#x2F;aadi_logo-removebg-preview%20(1).png"
+  intent="WELCOME"
+  chat-title="Aadi"
+  agent-id="d1fbf392-4a82-441f-8793-fefdf1a88949"
+  language-code="en"
+></df-messenger>
+
+</body>
+</html>
