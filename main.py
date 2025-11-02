@@ -12,6 +12,10 @@ app=FastAPI()
 
 inprogress_order={}
 
+@app.get("/")
+def root():
+    return {"message": "Backend is alive!"}
+
 @app.post("/webhook")
 async def handle_request(request: Request):
     #Retriving the json data from request
