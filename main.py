@@ -81,7 +81,7 @@ def order_complete(parameters:dict,session_id:str):
             order_total= db_helper.get_total_order_price(order_id)
             fulfillment_text=f"Awesome . We have placed your order. "\
                              f"Here is your order id #{order_id}. "\
-                             f"Your order total is ${order_total} which you can pay at time of delivery!"
+                             f"Your order total is ₹{order_total} which you can pay at time of delivery!"
 
         del inprogress_order[session_id]
 
@@ -109,7 +109,7 @@ def track_order(parameters:dict,session_id:str):
     order_status= db_helper.get_order_status(order_id)
     
     if order_status:
-        fulfillmentText=f"Your order status for order id {order_id} is {order_status}"
+        fulfillmentText=f"Your order status for order id {order_id} is {order_status}, wait for 20 minutes"
     else:
         fulfillmentText=f"No order found with order id {order_id}"
 
@@ -137,14 +137,14 @@ def remove_order(parameters:dict,session_id:str):
                  del current_food_dict[item]
         
         if len(removed_items)>0:
-            fulfillment_text.append(f"Removed{','.join(removed_items)} from your order")
+            fulfillment_text.append(f"Removed {','.join(removed_items)} from your order")
         if len(no_such_items)>0:
             fulfillment_text.append(f"Your current order does not have {','.join(no_such_items)}")
         if len(current_food_dict.keys())==0:
             fulfillment_text.append("Your order list is empty")
         else:
             order_str=get_str_resp_from_fooddict(current_food_dict)
-            fulfillment_text.append(f"Here is what is left inyour order:{order_str}")
+            fulfillment_text.append(f"Here is what is left in your order: {order_str}, anything else ?")
 
         inprogress_order[session_id]=current_food_dict  
         fulfillment_text = " ".join(fulfillment_text)  
