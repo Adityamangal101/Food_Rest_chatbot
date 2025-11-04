@@ -1,224 +1,1157 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pandeyji Eatery | Serving Tradition on Every Plate 🍛</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aadi's Eatery | Delicious Food & Wonderful Experience</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+    <style>
+      /* ---------- Reset & base ---------- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
 
-    body {
-      background-color: #fffaf3;
-      color: #333;
-      overflow-x: hidden;
-    }
+      :root {
+        --primary-color: #f97316; /* Vibrant Orange */
+        --dark-bg: #18181b; /* Dark background */
+        --dark-card: #27272a; /* Lighter dark for cards */
+        --text-light: #f4f4f5;
+        --text-dark: #18181b;
+        --text-muted: #a1a1aa;
+        --nav-height: 72px;
+      }
 
-    /* HERO SECTION */
-    header {
-      height: 90vh;
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-        url('https://images.unsplash.com/photo-1601050690597-3e9f05c7f951?auto=format&fit=crop&w=1350&q=80') center/cover;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 0 1rem;
-    }
+      body {
+        background-color: #ffffff;
+        color: var(--text-dark);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
 
-    header h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
 
-    header p {
-      font-size: 1.3rem;
-      margin-bottom: 2rem;
-    }
+      section {
+        padding: 5rem 0;
+      }
 
-    header button {
-      background: #ff9800;
-      color: white;
-      border: none;
-      padding: 0.8rem 2rem;
-      font-size: 1.1rem;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+      h1,
+      h2,
+      h3 {
+        font-weight: 700;
+      }
 
-    header button:hover {
-      background: #e68900;
-    }
+      h2 {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 3rem;
+        color: var(--text-dark);
+      }
 
-    /* ABOUT SECTION */
-    .about {
-      padding: 4rem 10%;
-      text-align: center;
-    }
+      .btn {
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: 0.25s;
+        text-decoration: none;
+        display: inline-block;
+      }
 
-    .about h2 {
-      color: #ff9800;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
+      .btn:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+      }
 
-    .about p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #555;
-    }
+      .btn-secondary {
+        background: #e4e4e7;
+        color: var(--text-dark);
+      }
+      .btn-secondary:hover {
+        background: #d4d4d8;
+        opacity: 1;
+      }
 
-    /* MENU SECTION */
-    .menu {
-      background: #fff3e0;
-      padding: 4rem 10%;
-    }
+      /* ---------- NAVBAR ---------- */
+      nav {
+        background: transparent;
+        padding: 0.5rem 0;
+        position: absolute; /* fixed so it's always visible */
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 200;
+        height: var(--nav-height);
+        display: flex;
+        align-items: center;
+        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(4px);
+      }
 
-    .menu h2 {
-      text-align: center;
-      color: #ff9800;
-      font-size: 2rem;
-      margin-bottom: 2rem;
-    }
+      nav .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-    .menu-items {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-    }
+      /* Logo area (image + text) */
+      nav .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: white;
+        text-decoration: none;
+      }
 
-    .item {
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: transform 0.3s;
-    }
+      nav .logo img {
+        height: 44px;
+        width: auto;
+        object-fit: contain;
+        border-radius: 8px;
+        display: block;
+      }
 
-    .item:hover {
-      transform: scale(1.05);
-    }
+      nav .logo span {
+        color: white;
+        line-height: 1;
+      }
 
-    .item img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
+      /* Desktop menu */
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 1.6rem;
+        align-items: center;
+      }
 
-    .item h3 {
-      color: #333;
-      margin: 1rem 0 0.5rem;
-      text-align: center;
-    }
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.2s;
+        padding: 0.25rem 0.35rem;
+      }
 
-    .item p {
-      color: #777;
-      text-align: center;
-      padding: 0 1rem 1.2rem;
-      font-size: 0.95rem;
-    }
+      nav ul li a:hover {
+        color: var(--primary-color);
+      }
 
-    /* FOOTER */
-    footer {
-      background: #ff9800;
-      color: white;
-      text-align: center;
-      padding: 1.2rem;
-      margin-top: 3rem;
-      font-size: 0.9rem;
-    }
-  </style>
-</head>
-<body>
+      /* order button (right) */
+      nav .order-btn {
+        margin-left: 1rem;
+      }
 
-  <!-- HERO -->
-  <header>
-    <h1>🍴 Pandeyji Eatery</h1>
-    <p>Serving Tradition on Every Plate 🍛</p>
-    <button onclick="openChat()">Chat With Us</button>
-  </header>
+      /* hamburger (mobile) */
+      .hamburger {
+        display: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
 
-  <!-- ABOUT -->
-  <section class="about">
-    <h2>About Us</h2>
-    <p>
-      Welcome to <strong>Pandeyji Eatery</strong>, where the flavors of India come alive!  
-      From the sizzling Pav Bhaji of Mumbai to the spicy Chole Bhature of Delhi,  
-      we serve authentic, heartwarming dishes that remind you of home.
-    </p>
-  </section>
+      .hamburger span {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: white;
+        position: relative;
+      }
 
-  <!-- MENU -->
-  <section class="menu">
-    <h2>Our Specialties</h2>
-    <div class="menu-items">
-      <div class="item">
-        <img src="https://images.unsplash.com/photo-1631515243349-68ac095c6c4b?auto=format&fit=crop&w=800&q=80" alt="Pav Bhaji">
-        <h3>Pav Bhaji</h3>
-        <p>Spicy mashed veggies served with buttery buns.</p>
+      .hamburger span::before,
+      .hamburger span::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 20px;
+        height: 2px;
+        background: white;
+      }
+      .hamburger span::before {
+        top: -6px;
+      }
+      .hamburger span::after {
+        top: 6px;
+      }
+
+      /* mobile menu overlay */
+      .mobile-menu {
+        display: none;
+      }
+
+      /* ---------- HERO ---------- */
+      /* add top padding so header content doesn't hide behind fixed nav */
+      header.hero {
+        padding-top: calc(var(--nav-height) + 16px);
+        height: 70vh;
+        min-height: 420px;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("https://images.unsplash.com/photo-1606491040050-5b0313e1f7b5?auto=format&fit=crop&q=80&w=2070")
+            center/cover;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        transition: background-position 0.4s ease;
+      }
+
+      header.hero h1 {
+        font-size: 3.2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        max-width: 700px;
+      }
+
+      header.hero p {
+        font-size: 1.15rem;
+        margin-bottom: 2rem;
+        max-width: 640px;
+        color: var(--text-light);
+      }
+
+      header.hero .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      /* ---------- PROMISE ---------- */
+      .promise .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 3rem;
+      }
+
+      .promise-content h2 {
+        text-align: left;
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+      }
+
+      .promise-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .promise-item .icon {
+        font-size: 1.5rem;
+        color: var(--primary-color);
+        margin-top: 4px;
+      }
+
+      .promise-item h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .promise-item p {
+        color: #555;
+        line-height: 1.6;
+      }
+
+      .promise-image img {
+        width: 100%;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      /* ---------- MENU ---------- */
+      .menu {
+        background: #fcfcfc;
+      }
+
+      .menu-items {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .item {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .item img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+      }
+
+      .item-content {
+        padding: 1.5rem;
+      }
+
+      .item-content h3 {
+        color: var(--text-dark);
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .item-content .description {
+        color: #777;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+      }
+
+      .item-content .price {
+        color: var(--primary-color);
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+
+      /* ---------- DEALS ---------- */
+      .deals-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .deal-card {
+        border-radius: 15px;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-size: cover;
+        background-position: center;
+        color: white;
+        min-height: 300px;
+      }
+
+      .deal-card-1 {
+        background-image: url("https://images.unsplash.com/photo-1596797176510-1c6f9b2d3e9c?auto=format&fit=crop&q=80&w=2070");
+        background-blend-mode: multiply;
+        background-color: rgba(220, 38, 38, 0.6);
+      }
+      .deal-card-2 {
+        background-image: url("https://images.unsplash.com/photo-1606213038933-40e947d1a2c3?auto=format&fit=crop&q=80&w=2070");
+        background-blend-mode: multiply;
+        background-color: rgba(245, 158, 11, 0.6);
+      }
+
+      .deal-card h3 {
+        font-size: 2.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .deal-card .price-save {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+      }
+      .deal-card .price-save span {
+        font-weight: 400;
+        text-decoration: line-through;
+        opacity: 0.8;
+        margin-left: 0.5rem;
+      }
+
+      .deal-card .btn {
+        background: white;
+        color: var(--text-dark);
+        align-self: flex-start;
+      }
+
+      .deal-card-3 {
+        background: var(--dark-bg);
+        color: white;
+        border-radius: 15px;
+        padding: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .deal-card-3 h3 {
+        font-size: 1.5rem;
+      }
+      .deal-card-3 .price-save {
+        font-size: 1.3rem;
+      }
+      .deal-card-3 .price-save span {
+        text-decoration: line-through;
+        font-weight: 400;
+        opacity: 0.8;
+      }
+
+      /* ---------- BLOG ---------- */
+      .blog {
+        background: #fcfcfc;
+      }
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .blog-post {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .blog-post:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      }
+      .blog-post img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+      .blog-post h3 {
+        font-size: 1.2rem;
+        padding: 1.5rem;
+        line-height: 1.6;
+      }
+
+      /* ---------- FOOTER ---------- */
+      footer {
+        background: var(--dark-bg);
+        color: var(--text-light);
+        padding: 5rem 0 2rem;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1.5fr;
+        gap: 3rem;
+        margin-bottom: 4rem;
+      }
+
+      .footer-col h4 {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+      }
+      .footer-col p {
+        color: var(--text-muted);
+        line-height: 1.8;
+        margin-bottom: 1rem;
+      }
+      .footer-col ul {
+        list-style: none;
+      }
+      .footer-col ul li {
+        margin-bottom: 0.75rem;
+      }
+      .footer-col ul li a {
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: 0.3s;
+      }
+      .footer-col ul li a:hover {
+        color: var(--primary-color);
+      }
+      .footer-bottom {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid var(--dark-card);
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+
+      /* ---------- RESPONSIVE (TABLET & MOBILE) ---------- */
+
+      /* Large tablets */
+      @media (max-width: 992px) {
+        .promise .container {
+          grid-template-columns: 1fr;
+        }
+        .promise-image {
+          order: -1; /* Move image to top */
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        header.hero {
+          height: 62vh;
+        }
+      }
+
+      /* Mobile and small tablets */
+      @media (max-width: 768px) {
+        /* show hamburger */
+        .hamburger {
+          display: flex;
+        }
+
+        /* hide desktop menu and show mobile controls */
+        nav ul {
+          display: none;
+        }
+
+        /* Buttons responsive tweak */
+          nav .order-btn  {
+            display: none;
+            padding: 0.6rem 1rem;
+            font-size: 0.8rem;
+            border-radius: 25px;
+          }
+
+          .hero-buttons .btn {
+            padding: 0.6rem 1.4rem;
+            font-size: 0.9rem;
+          }
+
+
+        /* mobile menu dropdown/overlay */
+        .mobile-menu {
+          display: block;
+          position: fixed;
+          top: var(--nav-height);
+          left: 0;
+          right: 0;
+          background: linear-gradient(180deg, rgba(0,0,0,0.85), rgba(0,0,0,0.98));
+          padding: 1.25rem;
+          transform: translateY(-10px);
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.25s ease, transform 0.25s ease;
+          z-index: 180;
+        }
+
+        .mobile-menu.open {
+          transform: translateY(0);
+          opacity: 1;
+          pointer-events: auto;
+        }
+
+        .mobile-menu ul {
+          display: flex;
+          flex-direction: column;
+          gap: 0.75rem;
+          list-style: none;
+        }
+
+        .mobile-menu ul li a {
+          color: white;
+          font-size: 1.05rem;
+          text-decoration: none;
+          padding: 0.6rem 0.4rem;
+          display: block;
+        }
+
+        .mobile-menu .mobile-order {
+          margin-top: 0.8rem;
+        }
+
+        /* logo sizing */
+        nav .logo img {
+          height: 36px;
+        }
+        nav .logo span {
+          font-size: 1.05rem;
+        }
+
+        /* hero text shrink */
+        header.hero h1 {
+          font-size: 2.2rem;
+          padding: 0 0.2rem;
+        }
+        header.hero p {
+          font-size: 1rem;
+          padding: 0 0.25rem;
+          margin-bottom: 1rem;
+        }
+
+        /* menu items smaller images */
+        .item img {
+          height: 180px;
+        }
+
+        .deals-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .deal-card-3 {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+         df-messenger {
+              --df-messenger-chat-window-width: 90vw;
+              --df-messenger-chat-window-height: 60vh; /* only 60% of phone screen */
+              --df-messenger-chat-border-radius: 16px;
+              --df-messenger-chat-padding: 8px;
+            }
+
+            /* Subtle positioning tweak so it floats nicely */
+            df-messenger::part(chat-wrapper) {
+              bottom: 80px !important;
+              right: 10px !important;
+            }
+
+      }
+
+      /* Extra small phones */
+      @media (max-width: 420px) {
+        :root {
+          --nav-height: 64px;
+        }
+        nav {
+          height: var(--nav-height);
+        }
+        nav .container {
+          gap: 0.5rem;
+        }
+        nav .logo img {
+          height: 32px;
+        }
+        header.hero {
+          height: 56vh;
+          min-height: 360px;
+          padding-top: calc(var(--nav-height) + 12px);
+        }
+        header.hero h1 {
+          font-size: 1.8rem;
+        }
+        header.hero p {
+          font-size: 0.95rem;
+        }
+        .item img {
+          height: 150px;
+        }
+      }
+
+      /* small accessibility + focus styles */
+      .hamburger:focus,
+      .hamburger:hover {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.18);
+      }
+      a:focus {
+        outline: 2px dashed rgba(249,115,22,0.35);
+        outline-offset: 3px;
+      }
+      /* Chatbot responsive adjustments */
+        df-messenger {
+          --df-messenger-chat-window-width: 360px;
+          --df-messenger-chat-window-height: 70vh; /* 70% of screen height */
+        }
+
+        @media (max-width: 768px) {
+          df-messenger {
+            --df-messenger-chat-window-width: 90vw; /* Take up most width */
+            --df-messenger-chat-window-height: 60vh; /* But not full height */
+          }
+        }
+
+        df-messenger {
+        --df-messenger-button-titlebar-color:#ff8027;
+      
+        }
+
+    </style>
+  </head>
+  <body>
+    <!-- NAVIGATION -->
+    <nav>
+      <div class="container">
+        <a href="#" class="logo" aria-label="Mangalji Eatery home">
+          <!-- swap the src for your real logo if desired -->
+          <img
+            src="https://raw.githubusercontent.com/Adityamangal101/My-assets/main/cropped_logo-removebg-preview.png"
+            alt="Aadi's Logo"
+          />
+          <span>Aadi's Eatery</span>
+        </a>
+
+        <!-- desktop menu -->
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Menu</a></li>
+        </ul>
+
+        <!-- order button (desktop) -->
+        <a href="#" class="btn order-btn">Order</a>
+
+        <!-- hamburger for mobile -->
+        <button
+          class="hamburger"
+          aria-label="Open menu"
+          aria-expanded="false"
+          id="hamburgerBtn"
+          title="Open menu"
+        >
+          <span></span>
+        </button>
       </div>
-      <div class="item">
-        <img src="https://images.unsplash.com/photo-1626082927387-abe3e6b4a7e5?auto=format&fit=crop&w=800&q=80" alt="Chole Bhature">
-        <h3>Chole Bhature</h3>
-        <p>Delhi’s iconic dish — fluffy bhature with spicy chickpeas.</p>
-      </div>
-      <div class="item">
-        <img src="https://images.unsplash.com/photo-1625397602235-76c9a1fcb4e9?auto=format&fit=crop&w=800&q=80" alt="Masala Dosa">
-        <h3>Masala Dosa</h3>
-        <p>South Indian crepe filled with spiced potatoes.</p>
-      </div>
-      <div class="item">
-        <img src="https://images.unsplash.com/photo-1606491956689-2b88f7e7c8a3?auto=format&fit=crop&w=800&q=80" alt="Biryani">
-        <h3>Biryani</h3>
-        <p>Fragrant basmati rice cooked with flavorful Indian spices.</p>
-      </div>
-      <div class="item">
-        <img src="https://images.unsplash.com/photo-1617196034796-73f39f3c8c57?auto=format&fit=crop&w=800&q=80" alt="Vada Pav">
-        <h3>Vada Pav</h3>
-        <p>Mumbai’s street-style spicy potato slider.</p>
-      </div>
-      <div class="item">
-        <img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80" alt="Samosa">
-        <h3>Samosa</h3>
-        <p>Crispy golden triangles filled with spicy potato goodness.</p>
-      </div>
-    </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2025 Pandeyji Eatery | Crafted with ❤️ in India
-  </footer>
+      <!-- mobile menu overlay -->
+      <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <ul>
+          <li><a href="#home" class="mobile-link">Home</a></li>
+          <li><a href="#about" class="mobile-link">About</a></li>
+          <li><a href="#services" class="mobile-link">Services</a></li>
+          <li><a href="#menu" class="mobile-link">Menu</a></li>
+        </ul>
+        <a href="#" class="btn mobile-order">Order</a>
+      </div>
+    </nav>
 
-  <!-- Dialogflow Chatbot Embed -->
-  <script>
-    function openChat() {
-      window.dfMessenger.renderCustomText('👋 Namaste! How can I help you today?');
-      document.querySelector('df-messenger').setAttribute('open', '');
+    <!-- HERO -->
+    <header class="hero" id="home">
+      <h1>Delicious Food & Wonderful Experience</h1>
+      <p>
+        The time to stay at home, order and eat your favorite delicacies from
+        your favorite restaurants.
+      </p>
+      <div class="hero-buttons">
+        <a href="#" class="btn" id="open-chat-btn">Chat with us for easy order</a>
+      </div>
+    </header>
+
+    <!-- PROMISE -->
+    <section class="promise">
+      <div class="container">
+        <div class="promise-content">
+          <h2>Fast, Reliable and Delicious That's Our Promise</h2>
+          <div class="promise-item">
+            <span class="icon">✅</span>
+            <div>
+              <h3>100% Natural</h3>
+              <p>
+                Food is made with fresh and natural ingredients. That's why every
+                dish is so delicious and healthy.
+              </p>
+            </div>
+          </div>
+          <div class="promise-item">
+            <span class="icon">✅</span>
+            <div>
+              <h3>Optimal Weight Loss</h3>
+              <p>
+                Our menu contains many healthy dishes that are designed to help
+                you lose weight and stay fit.
+              </p>
+            </div>
+          </div>
+          <div class="promise-item">
+            <span class="icon">✅</span>
+            <div>
+              <h3>Diet Health Service</h3>
+              <p>
+                We provide a diet health service for people who want to eat
+                healthy and delicious food.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="promise-image">
+          <img
+            src="https://images.unsplash.com/photo-1601050690294-397f3c324515?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=2070"
+            alt="Samosa"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section class="menu" id="menu">
+      <div class="container">
+        <h2>See What's On The Plate Menu 🔥🔥</h2>
+        <div class="menu-items">
+          <div class="item">
+            <img
+              src="https://images.unsplash.com/photo-1619193099598-6856ec4e2a87?auto=format&fit=crop&q=60&w=600"
+              alt="Pav Bhaji"
+            />
+            <div class="item-content">
+              <h3>Pav Bhaji</h3>
+              <p class="description">Spicy mashed veggies served with buttery buns.</p>
+              <p class="price">from ₹70</p>
+            </div>
+          </div>
+          <div class="item">
+            <img
+              src="https://media.istockphoto.com/id/1328524499/photo/katlambe-chole.jpg?s=2048x2048&w=is&k=20&c=9120grggJnqdc8ZiI5ZjQudXb80JOPX8q-6KNzsRYIo="
+              alt="Chole Bhature"
+            />
+            <div class="item-content">
+              <h3>Chole Bhature</h3>
+              <p class="description">Delhi’s iconic dish — fluffy bhature with spicy chickpeas.</p>
+              <p class="price">from ₹120</p>
+            </div>
+          </div>
+          <div class="item">
+            <img
+              src="https://images.unsplash.com/photo-1694849789325-914b71ab4075?auto=format&fit=crop&q=80&w=1074"
+              alt="Masala Dosa"
+            />
+            <div class="item-content">
+              <h3>Masala Dosa</h3>
+              <p class="description">South Indian crepe filled with spiced potatoes.</p>
+              <p class="price">from ₹70</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEALS -->
+    <section class="deals">
+      <div class="container">
+        <h2>Hot Pizza, Hotter Deals</h2>
+        <div class="deals-grid">
+          <div class="deal-card deal-card-1">
+            <h3>Spicy Duo Deal</h3>
+            <p class="price-save">₹129 <span>Save ₹29</span></p>
+            <a href="#" class="btn">Order Now</a>
+          </div>
+          <div class="deal-card deal-card-2">
+            <h3>Cheese Lovers Pair</h3>
+            <p class="price-save">₹169 <span>Save ₹29</span></p>
+            <a href="#" class="btn">Order Now</a>
+          </div>
+        </div>
+        <div class="deal-card-3">
+          <div>
+            <h3>Meat Feast Combo</h3>
+            <p>1 Meat Feast + 1 Drink</p>
+          </div>
+          <p class="price-save">₹189 <span>Save ₹49</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG -->
+    <section class="blog">
+      <div class="container">
+        <h2>Our Blog & Articles</h2>
+        <div class="blog-grid">
+          <div class="blog-post">
+            <img
+              src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&q=80&w=687"
+              alt="Biryani"
+            />
+            <h3>Exploring the rich flavors of Hyderabadi Biryani</h3>
+          </div>
+          <div class="blog-post">
+            <img
+              src="https://images.unsplash.com/photo-1750767396969-f37060ebe07d?auto=format&fit=crop&q=80&w=1201"
+              alt="Vada Pav"
+            />
+            <h3>Mumbai's iconic street food: The perfect Vada Pav</h3>
+          </div>
+          <div class="blog-post">
+            <img
+              src="https://images.unsplash.com/photo-1601050690294-397f3c324515?auto=format&fit=crop&q=80&w=2070"
+              alt="Samosa"
+            />
+            <h3>The crispy, savory delight of a homemade Samosa</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h4>Aadi's Eatery</h4>
+            <p>We are a food company that serves delicious and healthy Indian food for you.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Menu</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact Info</h4>
+            <ul>
+              <li><a href="#">447 Khandwa Road, Simrol</a></li>
+              <li><a href="#">+91 9893 XXX XXX</a></li>
+              <li><a href="#">aadiseatery@gmail.com</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>More</h4>
+            <ul>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Deals</a></li>
+              <li><a href="#">Subscribe</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">© 2025 Aadi's Eatery | All Rights Reserved</div>
+      </div>
+    </footer>
+
+    <!-- Dialogflow messenger (kept as-is) -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+      intent="WELCOME"
+      chat-title="Aadi"
+      agent-id="d1fbf392-4a82-441f-8793-fefdf1a88949"
+      language-code="en"
+      df-messenger-bot-message="#fd8f43"
+    ></df-messenger>
+    
+
+<script>
+/*
+  Robust Dialogflow Messenger opener
+  - Place AFTER the Dialogflow <script> and <df-messenger> element in your HTML.
+  - It will try multiple selector fallbacks and poll until the messenger is ready.
+  - If it cannot access the internal shadow DOM (closed shadow), it will log a hint.
+*/
+
+(function () {
+  const CHAT_BUTTON_ID = "open-chat-btn"; // your hero button id
+  const MAX_POLL = 30; // how many times to poll (intervals)
+  const POLL_INTERVAL = 300; // ms between polls
+
+  function debugLog(...args) {
+    // toggle debug logs easily
+    console.log("[df-opener]", ...args);
+  }
+
+  // Try to open messenger by clicking the visible launcher inside df-messenger
+  async function tryOpenDialogflow(dfEl, options = { sendStarter: false, starterText: "" }) {
+    if (!dfEl) {
+      debugLog("No <df-messenger> element found.");
+      return false;
     }
-  </script>
 
-  <!-- Replace this Dialogflow agent with yours -->
-  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-<df-messenger
-  chat-icon="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Adityamangal101&#x2F;My-assets&#x2F;main&#x2F;aadi_logo-removebg-preview%20(1).png"
-  intent="WELCOME"
-  chat-title="Aadi"
-  agent-id="d1fbf392-4a82-441f-8793-fefdf1a88949"
-  language-code="en"
-></df-messenger>
+    // many df-messenger implementations use open shadow roots; we will try to access them
+    try {
+      const dfShadow = dfEl.shadowRoot;
+      if (!dfShadow) {
+        debugLog("df-messenger has no accessible shadowRoot (might be closed).");
+        return false;
+      }
 
-</body>
+      // 1) find launcher component (common: df-messenger-launcher)
+      let launcher = dfShadow.querySelector("df-messenger-launcher, df-messenger-launcher *");
+      // 2) fallback: look for any button-like element that looks like launcher
+      if (!launcher) {
+        launcher =
+          dfShadow.querySelector('[aria-label*="open"]') ||
+          dfShadow.querySelector('button') ||
+          dfShadow.querySelector('.launcher') ||
+          dfShadow.querySelector('[data-launcher]');
+      }
+
+      if (launcher) {
+        // if the found element is not actually clickable, try to find a clickable child
+        const clickable =
+          launcher.closest("button") ||
+          launcher.querySelector("button") ||
+          launcher;
+
+        debugLog("Clicking launcher element:", clickable);
+        clickable.click();
+      } else {
+        debugLog("Launcher element not found inside df-messenger shadow root.");
+      }
+
+      // Wait a little for the chat UI to open and render
+      await new Promise((r) => setTimeout(r, 450));
+
+      // 3) Try to focus the input field (several possible internal selectors)
+      // Common nested path: df-messenger-chat -> shadowRoot -> df-messenger-user-input -> shadowRoot -> input/textarea/button
+      const chatEl = dfShadow.querySelector("df-messenger-chat") || dfShadow.querySelector("df-messenger-iframe, .chat");
+      if (!chatEl) {
+        debugLog("df-messenger-chat not found (maybe not open yet).");
+      } else {
+        const chatShadow = chatEl.shadowRoot;
+        if (chatShadow) {
+          // search for user input container
+          const userInput =
+            chatShadow.querySelector("df-messenger-user-input") ||
+            chatShadow.querySelector("df-messenger-user-input *") ||
+            chatShadow.querySelector("input[type='text'], textarea, div[contenteditable='true']");
+
+          // deeper: if userInput is a wrapper, drill into its shadow root
+          let inputField = null;
+          if (userInput) {
+            // if node has shadowRoot, check inside
+            if (userInput.shadowRoot) {
+              inputField =
+                userInput.shadowRoot.querySelector("input[type='text'], textarea, div[contenteditable='true']") ||
+                userInput.shadowRoot.querySelector("input, textarea, button");
+            } else {
+              // not a shadow host, try direct query
+              inputField = userInput.querySelector
+                ? userInput.querySelector("input[type='text'], textarea, div[contenteditable='true']") ||
+                  userInput.querySelector("input, textarea")
+                : null;
+            }
+          } else {
+            // fallback: try to find input directly in chatShadow
+            inputField = chatShadow.querySelector("input[type='text'], textarea, div[contenteditable='true']");
+          }
+
+          if (inputField) {
+            try {
+              inputField.focus();
+              debugLog("Focused chat input:", inputField);
+              // Optionally send starter text
+              if (options.sendStarter && options.starterText) {
+                // set value and dispatch events depending on element kind
+                if ("value" in inputField) {
+                  inputField.value = options.starterText;
+                  inputField.dispatchEvent(new Event("input", { bubbles: true }));
+                } else {
+                  // contenteditable or other
+                  inputField.textContent = options.starterText;
+                  inputField.dispatchEvent(new Event("input", { bubbles: true }));
+                }
+
+                // try to find send button near input and click it
+                const sendBtn =
+                  chatShadow.querySelector("button[aria-label='send'], button[aria-label='Send']") ||
+                  chatShadow.querySelector("button.send, button[type='submit']") ||
+                  userInput?.shadowRoot?.querySelector("button") ||
+                  userInput?.querySelector("button");
+
+                if (sendBtn) {
+                  debugLog("Auto-sending starter message via send button.");
+                  sendBtn.click();
+                } else {
+                  debugLog("No send button found for auto-send. Message typed but not sent.");
+                }
+              }
+            } catch (err) {
+              debugLog("Error focusing/typing into input:", err);
+            }
+          } else {
+            debugLog("No input field found inside chatShadow.");
+          }
+        } else {
+          debugLog("chatEl has no accessible shadowRoot.");
+        }
+      }
+
+      return true;
+    } catch (err) {
+      debugLog("Exception while trying to open Dialogflow messenger:", err);
+      return false;
+    }
+  }
+
+  // Polling helper to wait until df-messenger is defined & ready
+  function waitForDfAndWire() {
+    const chatButton = document.getElementById(CHAT_BUTTON_ID);
+    if (!chatButton) {
+      console.warn("[df-opener] Hero chat button not found with id:", CHAT_BUTTON_ID);
+      return;
+    }
+
+    // Make sure df-messenger element exists in DOM
+    let attempts = 0;
+    const poll = setInterval(async () => {
+      attempts++;
+      const dfEl = document.querySelector("df-messenger");
+      if (dfEl && (window.customElements && customElements.get("df-messenger"))) {
+        clearInterval(poll);
+        debugLog("df-messenger element present and custom element defined.");
+
+        // attach click handler to hero button
+        chatButton.addEventListener("click", async function (ev) {
+          ev.preventDefault();
+          debugLog("Hero chat button clicked, attempting to open messenger...");
+          // Try multiple times to open (some elements load after initial render)
+          let opened = false;
+          for (let i = 0; i < MAX_POLL && !opened; i++) {
+            opened = await tryOpenDialogflow(dfEl, { sendStarter: false }); // set to true to auto-send
+            if (!opened) {
+              await new Promise((r) => setTimeout(r, POLL_INTERVAL));
+            } else {
+              debugLog("Messenger open attempt succeeded.");
+              break;
+            }
+          }
+          if (!opened) {
+            debugLog("Could not open messenger via shadow DOM. As a fallback, try clicking visible launcher if possible.");
+            // final fallback: find any visible button on the page with messenger icon text/background and click
+            const possible = document.querySelectorAll("button, a");
+            for (const el of possible) {
+              const aria = (el.getAttribute && el.getAttribute("aria-label")) || "";
+              const txt = (el.innerText || "").toLowerCase();
+              if (aria.toLowerCase().includes("chat") || aria.toLowerCase().includes("open") || txt.includes("chat")) {
+                try { el.click(); debugLog("Clicked fallback page button:", el); break; } catch {}
+              }
+            }
+          }
+        });
+
+        return;
+      }
+
+      if (attempts > MAX_POLL) {
+        clearInterval(poll);
+        console.warn("[df-opener] Timed out waiting for df-messenger to be defined. It may still load later.");
+      }
+    }, POLL_INTERVAL);
+  }
+
+  // If custom element whenDefined is supported, hook to it — otherwise poll
+  if (window.customElements && customElements.whenDefined) {
+    customElements.whenDefined("df-messenger").then(() => {
+      debugLog("customElements reports df-messenger defined.");
+      waitForDfAndWire();
+    }).catch(() => {
+      debugLog("customElements.whenDefined failed, using poll.");
+      waitForDfAndWire();
+    });
+  } else {
+    waitForDfAndWire();
+  }
+})();
+</script>
+
+
+
+ </body>
 </html>
