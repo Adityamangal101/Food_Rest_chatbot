@@ -7,7 +7,7 @@ The chatbot allows customers to place food orders seamlessly through natural con
 
 ## 🚀 Live Demo
 
-🔗 **Website:** [https://mangaljis-eatery.onrender.com](#)  
+🔗 **Website:** [https://aadis-eatery.onrender.com/](#)  
 💬 **Chatbot:** Integrated on the website (powered by Dialogflow)  
 ⚙️ **Backend API:** Hosted on Render using FastAPI  
 🗃️ **Database:** MySQL (hosted remotely)
@@ -109,8 +109,8 @@ Copy code
 
 1. **Clone the repository**
  
-git clone https://github.com/your-username/Mangalji-Eatery.git
-cd Mangalji-Eatery/backend
+git clone https://github.com/your-username/Food_Rest_chatbot.git
+cd Food_Rest_chatbot/backend
 
 2. **Create a virtual environment**
 
@@ -149,5 +149,5 @@ Open frontend/index.html in your browser and test chatbot.
 Aditya Mangal
 💼 Full Stack Developer | AI Chatbot Enthusiast
 📍 India
-🔗 LinkedIn
+🔗 LinkedIn:https://www.linkedin.com/in/adityamangalai/
 
